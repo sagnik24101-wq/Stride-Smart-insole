@@ -1,0 +1,2 @@
+export type DistanceSource='gps'|'estimated'|'unknown';
+export interface ActivityRecord { id:string; timestamp:number; lat?:number; lng?:number; steps:number; distanceM?:number; distanceSource:DistanceSource; gpsStatus:'available'|'unavailable'|'unknown'; gpsAccuracy?:number; sessionId?:string; deviceId?:string; syncStatus:'synced'|'pending'|'unknown'; heelPeak?:number; ballPeak?:number; toePeak?:number; }

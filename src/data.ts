@@ -1,0 +1,3 @@
+import type {ActivityRecord} from './types';
+const now=Date.now();
+export const demoRecords:ActivityRecord[]=Array.from({length:36},(_,i)=>{const t=now-(35-i)*3600000;const inWalk=i>23&&i<31;return{id:`demo-${i}`,timestamp:t,lat:inWalk?37.7749+(i-24)*.0007:undefined,lng:inWalk?-122.4194+(i-24)*.0009:undefined,steps:Math.round((i+1)*188),distanceM:undefined,distanceSource:'unknown',gpsStatus:inWalk?'available':'unknown',gpsAccuracy:inWalk?5+Math.round(i%4):undefined,sessionId:'demo-walk-1',deviceId:'INSOLE-042',syncStatus:'synced',heelPeak:inWalk?680+20*(i%6):undefined,ballPeak:inWalk?520+18*(i%5):undefined,toePeak:inWalk?410+23*(i%4):undefined};});
